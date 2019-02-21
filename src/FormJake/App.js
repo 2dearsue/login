@@ -62,9 +62,8 @@ export default class App extends Component {
     <BrowserRouter>
       <>
           <Route exact path="/" render= {() => <Form formProps = {formProps}/> } />
-          
-        <Switch>
           <Route path="/logout" render= {() => <Logout resetFields={this.resetFields}/> } />
+        <Switch>
           <Route path="/user" render= {() => <UserPage userName={this.state.userName} unauthorize={this.unauthorize}/> } />
           {this.state.isAuth && <Redirect to="/user" />}
         </Switch>
